@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TSP Entertainment — Landing</title>
+  <meta name="description" content="TSP Entertainment — ค่ายเพลง แผงศิลปินใหม่จากประเทศไทย" />
+  <!-- Tailwind Play CDN for quick prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small extras */
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
+    .card-border { border: 1px solid rgba(255,255,255,0.06); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white antialiased">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-black/40 backdrop-blur glass border-b border-white/6">
+    <nav class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 font-semibold text-lg">
+        <!-- music icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-2v13"/></svg>
+        TSP Entertainment
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm opacity-90">
+        <a href="#artists" class="hover:underline">Artists</a>
+        <a href="#videos" class="hover:underline">Videos</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://www.youtube.com/@tsp_ent" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-2 rounded-md ring-1 ring-white/10">
+          <!-- YouTube icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-1-1.7-1-2.1-1.1C16.8 2.5 12 2.5 12 2.5h-.1s-4.8 0-8.6.3c-.5 0-1.3.1-2.1 1.1-.6.7-.8 2.3-.8 2.3S0 8 0 9.8v2.4C0 14 0 15.6.4 17.6c.2.9.6 1.5 1.2 2 1 .8 2.3.8 2.9.9 2.1.2 9.1.3 9.1.3s4.8 0 8.6-.3c.5 0 1.3-.1 2.1-1.1.6-.7.8-2.3.8-2.3s.2-1.6.2-3.4V9.8c0-1.8-.2-3.6-.2-3.6z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main id="home">
+    <section class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-sm">ค่ายเพลง • Music Label</div>
+          <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight">เสียงใหม่จากไทยสู่โลก — <span class="block text-neutral-300">Discover fresh artists at TSP</span></h1>
+          <p class="mt-5 text-lg opacity-80">เราสนับสนุนศิลปินหน้าใหม่ สร้างสรรค์เพลงคุณภาพ และแบ่งปันสู่ผู้ฟังทั่วโลก พร้อมเบื้องหลังการทำงานที่คุณจะหลงรัก</p>
+          <div class="mt-6 flex gap-3">
+            <a href="https://www.youtube.com/@tsp_ent" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl ring-1 ring-white/10">▶ Watch on YouTube</a>
+            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-black">✉ Work with us</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden card-border glass">
+            <img src="https://images.unsplash.com/photo-1507209696999-4f4b6d9b7a7b?q=80&w=1600&auto=format&fit=crop" alt="studio" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 left-6 bg-gradient-to-r from-pink-500/30 to-violet-600/30 rounded-3xl px-4 py-2 card-border">Open for demos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artists -->
+    <section id="artists" class="py-12 border-t border-white/6">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="flex items-end justify-between mb-6">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold">Featured Artists</h2>
+            <p class="text-sm opacity-80 mt-1">พบกับรายชื่อศิลปินจากค่าย TSP Entertainment</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <article class="rounded-2xl overflow-hidden card-border glass">
+            <img src="521548783_17863265091434202_5689502785759297553_n.jpg" alt="The Spy" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <div class="font-semibold">The Spy </div>
+              <div class="text-sm opacity-70">ThaiRock</div>
+            </div>
+          </article>
+        
+
+          <article class="rounded-2xl overflow-hidden card-border glass">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="John Iron" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <div class="font-semibold">John Iron</div>
+              <div class="text-sm opacity-70">Experimental</div>
+            </div>
+          </article>
+
+          <article class="rounded-2xl overflow-hidden card-border glass">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="Capibara" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <div class="font-semibold">Capibara</div>
+              <div class="text-sm opacity-70">Hip‑Hop / Rap</div>
+            </div>
+          </article>
+
+          <article class="rounded-2xl overflow-hidden card-border glass">
+            <img src="channels4_profile 1.jpg" alt="คณะรถเล็ก" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <div class="font-semibold">คณะรถเล็ก</div>
+              <div class="text-sm opacity-70">Folk / Indie</div>
+            </div>
+          </article>
+
+          <article class="rounded-2xl overflow-hidden card-border glass">
+            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop" alt="คณะรถใหญ่" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <div class="font-semibold">คณะรถใหญ่</div>
+              <div class="text-sm opacity-70">Rock</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="py-12 border-t border-white/6">
+      <div class="max-w-6xl mx-auto px-5">
+        <h3 class="text-2xl font-bold mb-4">Latest Videos</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl overflow-hidden card-border glass">
+            <div class="aspect-video">
+              <iframe src="https://www.youtube.com/watch?v=hzezAOSZMjk" class="w-full h-full" title="MV – Debut Single" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+            <div class="p-3 text-sm">MV – Debut Single</div>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden card-border glass">
+            <div class="aspect-video">
+              <iframe src="https://www.youtube.com/embed/5NV6Rdv1a3I" class="w-full h-full" title="Live Session" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+            <div class="p-3 text-sm">Live Session</div>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden card-border glass">
+            <div class="aspect-video">
+              <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" class="w-full h-full" title="Behind the Scenes" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+            <div class="p-3 text-sm">Behind the Scenes</div>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="https://www.youtube.com/@tsp_ent/videos" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl ring-1 ring-white/10">View all videos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-12 border-t border-white/6">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h3 class="text-2xl font-bold">About TSP Entertainment</h3>
+          <p class="mt-3 opacity-90">TSP Entertainment คือค่ายเพลงที่ก่อตั้งในปี 2567 พร้อมภารกิจผลักดันเสียงใหม่ ๆ จากประเทศไทยให้ก้องไกลสู่ผู้ฟังทั่วโลก เราทำงานร่วมกับศิลปินอย่างใกล้ชิดตั้งแต่การพัฒนาเพลง การผลิต ไปจนถึงการเผยแพร่และโปรโมต</p>
+        </div>
+        <ul class="space-y-3 text-sm opacity-80">
+          <li>• Artist Development และ A&amp;R</li>
+          <li>• Production / Mixing / Mastering</li>
+          <li>• Distribution &amp; Marketing</li>
+          <li>• Live Sessions &amp; Content Creation</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12 border-t border-white/6">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-5 gap-6">
+        <form class="md:col-span-3 rounded-2xl p-6 card-border glass" onsubmit="event.preventDefault(); alert('ขอบคุณ! ทางเราจะติดต่อกลับเร็ว ๆ นี้');">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm opacity-80">ชื่อ (Name)</label>
+              <input required type="text" placeholder="Your name" class="mt-1 w-full rounded-xl bg-neutral-900/60 px-3 py-2 outline-none" />
+            </div>
+            <div>
+              <label class="text-sm opacity-80">อีเมล (Email)</label>
+              <input required type="email" placeholder="you@example.com" class="mt-1 w-full rounded-xl bg-neutral-900/60 px-3 py-2 outline-none" />
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="text-sm opacity-80">ข้อความ (Message)</label>
+            <textarea required placeholder="Tell us about your project or send a demo link…" rows="5" class="mt-1 w-full rounded-xl bg-neutral-900/60 px-3 py-2 outline-none"></textarea>
+          </div>
+          <button type="submit" class="mt-4 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-black">ส่งข้อความ</button>
+        </form>
+
+        <aside class="md:col-span-2 rounded-2xl p-6 card-border glass">
+          <h4 class="font-semibold mb-2">Follow</h4>
+          <div class="space-y-3 text-sm">
+            <a href="https://www.youtube.com/@tsp_ent" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 opacity-90">YouTube: @tsp_ent</a>
+            <div class="opacity-70">Facebook / Instagram / TikTok — coming soon</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/6 mt-12 py-8">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm opacity-80">
+      <div>© <span id="year"></span> TSP Entertainment. All rights reserved.</div>
+      <div class="flex items-center gap-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-sm">Buriram, Thailand</div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-sm">Open for demos</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
