@@ -1,225 +1,273 @@
-<!-- ไฟล์ index.html แบบเลื่อนหน้าเว็บไซต์ขึ้นลงได้ รายละเอียดยาว -->
 <!doctype html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TSP Entertainment — Landing</title>
   <meta name="description" content="TSP Entertainment — ค่ายเพลง แผงศิลปินใหม่จากประเทศไทย" />
   <link rel="icon" type="image/jpg" href="channels4_profile 1.jpg">
-  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;800&family=Inter:wght@400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { font-family: 'Prompt', sans-serif; background-color: #171717; color: #fff; margin: 0; padding: 0; scroll-behavior: smooth; }
-    nav { background-color: rgba(0,0,0,0.5); backdrop-filter: blur(8px); padding: 1rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 50; }
-    nav .font-bold { font-weight: bold; font-size: 1.25rem; }
-    nav a { margin-left: 1rem; text-decoration: none; color: #fff; transition: color 0.3s; cursor: pointer; }
-    nav a:hover { color: #facc15; }
-    section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.25rem; scroll-margin-top: 80px; }
-    h1 { font-size: 2.25rem; font-weight: 800; }
-    p { margin-top: 1rem; opacity: 0.8; font-size: 1.125rem; }
-    form input, form textarea { width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 0.5rem; background-color: #1f1f1f; border: none; color: #fff; }
-    form button { margin-top: 0.5rem; padding: 0.5rem 1rem; border-radius: 0.5rem; background-color: #fff; color: #000; font-weight: 500; cursor: pointer; }
-    form button:hover { background-color: #facc15; color: #000; }
-    footer { margin-top: 3rem; padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align:center; font-size:0.875rem; opacity:0.7; }
-    ul { list-style: disc; padding-left: 1.25rem; opacity: 0.9; margin-top: 1rem; }
-    .grid { display: grid; gap: 1.5rem; }
-    @media (min-width: 640px) { .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-    @media (min-width: 1024px) { .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); } }
-    .rounded-2xl { border-radius: 1rem; }
-    .overflow-hidden { overflow: hidden; }
-    .card-border { border: 1px solid rgba(255,255,255,0.1); }
-    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+  
+  <!-- Tailwind & Animation -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-     .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .music-note {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .progress-bar {
-            transition: width 0.5s ease;
-        }
+  <style>
+    :root { scroll-behavior: smooth; }
+    body { font-family: 'Prompt', 'Inter', sans-serif; background-color: #0a0a0a; color: #fff; }
+    
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); }
+    .card-border { border: 1px solid rgba(255,255,255,0.08); }
+    .gradient-bg { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%); }
+    
+    .nav-link { position: relative; transition: all 0.3s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 2px; background: #facc15; transition: 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    
+    .artist-card { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .artist-card:hover { transform: translateY(-10px); border-color: #facc15; }
+    
+    /* ซ่อน Scrollbar สำหรับความสวยงาม */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #facc15; }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav>
-  <div class="font-bold">TSP Entertainment</div>
-  <div>
-    <a href="#page1">Home</a>
-    <a href="#page2">Artists 1</a>
-    <a href="#page3">Artists 2</a>
-    <a href="#page4">Videos 1</a>
-    <a href="#page5">Videos 2</a>
-    <a href="#page6">About 1</a>
-    <a href="#page7">About 2</a>
-    <a href="#page8">Contact</a>
-    <a href="#page9">News</a>
-    <a href="#page10">Summary</a>
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5 py-4">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <div class="font-black text-2xl tracking-tighter text-yellow-400">TSP <span class="text-white font-light uppercase text-sm tracking-widest ml-1">Ent</span></div>
+    <div class="hidden lg:flex items-center gap-6 text-[13px] uppercase tracking-wider font-semibold">
+      <a href="#page1" class="nav-link">Home</a>
+      <a href="#page2" class="nav-link">Artists</a>
+      <a href="#page4" class="nav-link">Videos</a>
+      <a href="#page6" class="nav-link">About</a>
+      <a href="#page8" class="nav-link text-yellow-400">Contact</a>
+      <a href="#page9" class="nav-link">News</a>
+    </div>
+    <button class="lg:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
   </div>
 </nav>
 
-   <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold mb-6">ค่ายเพลงที่กำลังพัฒนาทางด้านดนตรี</h2>
-            <p class="text-xl mb-8 opacity-90">อยากเป้นศิลปินค่ายนี้ สมัครเลย</p>
-            <button onclick="scrollToCourses()" class="bg-yellow-400 text-purple-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
-                สมัครเลย! 🚀
-            </button>
+<!-- Hero Section -->
+<section id="page1" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <div class="absolute inset-0 gradient-bg -z-10 opacity-40"></div>
+  <div class="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px]"></div>
+  
+  <div class="container mx-auto px-6 text-center" data-aos="zoom-out">
+    <div class="inline-block px-4 py-1 rounded-full glass card-border text-xs text-yellow-400 mb-6 uppercase tracking-[0.3em]">The Sound of Thailand</div>
+    <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight">เสียงใหม่จากไทย <br><span class="text-yellow-400">สู่ระดับโลก</span></h1>
+    <p class="text-xl text-neutral-400 max-w-2xl mx-auto mb-10 font-light">ค่ายเพลงยุคใหม่ที่พร้อมจะขับเคลื่อนผลงานดนตรีคุณภาพ และพัฒนาศิลปินอย่างไม่หยุดยั้ง</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#page8" class="bg-yellow-400 text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+        สมัครเป็นศิลปิน 🚀
+      </a>
+      <a href="#page4" class="glass card-border px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all">
+        ดูผลงานล่าสุด
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Artists 1 & 2 -->
+<section id="page2" class="py-24">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-black mb-2" data-aos="fade-right">Featured Artists</h2>
+    <p class="text-neutral-500 mb-12" data-aos="fade-right" data-aos-delay="100">ศิลปินที่น่าจับตามองในขณะนี้</p>
+    
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Card 1 -->
+      <article class="artist-card rounded-3xl overflow-hidden glass card-border" data-aos="fade-up">
+        <div class="h-72 relative">
+          <img src="521548783_17863265091434202_5689502785759297553_n.jpg" alt="The Spy" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
         </div>
-    </section>
+        <div class="p-6 relative">
+          <div class="font-bold text-xl mb-1">The Spy</div>
+          <div class="text-sm text-yellow-400 mb-4 tracking-widest uppercase font-semibold text-xs">Thai Rock</div>
+          <a href="#" class="text-xs font-bold border-b-2 border-yellow-400 pb-1 hover:text-yellow-400 transition-colors">READ BIOGRAPHY</a>
+        </div>
+      </article>
 
-<!-- Pages -->
-<section id="page1">
-<h1>ยินดีต้อนรับสู่ TSP Entertainment</h1>
-<p>ค่ายเพลงสำหรับศิลปินหน้าใหม่จากไทยสู่โลก</p>
-<div class="mt-6 space-x-3">
-  <a href="#page4" class="px-4 py-2 bg-white text-black rounded-lg">ชมวิดีโอ</a>
-  <a href="#page8" class="px-4 py-2 border border-white rounded-lg">ติดต่อเรา</a>
-</div>
+      <!-- Card 2 -->
+      <article class="artist-card rounded-3xl overflow-hidden glass card-border" data-aos="fade-up" data-aos-delay="100">
+        <div class="h-72 relative">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        </div>
+        <div class="p-6 relative">
+          <div class="font-bold text-xl mb-1">John Iron</div>
+          <div class="text-sm text-yellow-400 mb-4 tracking-widest uppercase font-semibold text-xs">Experimental</div>
+          <a href="#" class="text-xs font-bold border-b-2 border-yellow-400 pb-1">READ BIOGRAPHY</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="artist-card rounded-3xl overflow-hidden glass card-border" data-aos="fade-up" data-aos-delay="200" id="page3">
+        <div class="h-72 relative">
+          <img src="channels4_profile 1.jpg" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        </div>
+        <div class="p-6 relative">
+          <div class="font-bold text-xl mb-1">คณะรถเล็ก</div>
+          <div class="text-sm text-yellow-400 mb-4 tracking-widest uppercase font-semibold text-xs">Folk / Indie</div>
+          <a href="#" class="text-xs font-bold border-b-2 border-yellow-400 pb-1">READ BIOGRAPHY</a>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="artist-card rounded-3xl overflow-hidden glass card-border" data-aos="fade-up" data-aos-delay="300">
+        <div class="h-72 relative">
+          <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        </div>
+        <div class="p-6 relative">
+          <div class="font-bold text-xl mb-1">คณะรถใหญ่</div>
+          <div class="text-sm text-yellow-400 mb-4 tracking-widest uppercase font-semibold text-xs">Modern Rock</div>
+          <a href="#" class="text-xs font-bold border-b-2 border-yellow-400 pb-1">READ BIOGRAPHY</a>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="page2">
-<h1>Featured Artists 1</h1>
-<p>แนะนำศิลปินกลุ่มแรกจากค่าย TSP</p>
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<article class="rounded-2xl overflow-hidden card-border glass">
-<img src="521548783_17863265091434202_5689502785759297553_n.jpg" alt="The Spy" class="w-full h-44 object-cover">
-<div class="p-4">
-<div class="font-semibold">The Spy</div>
-<button class="artist-button" onclick="window.location.href='the-spy.html'">ประวัติ</button>
-<div class="text-sm opacity-70">ThaiRock</div>
-</div>
-</article>
-<article class="rounded-2xl overflow-hidden card-border glass">
-<img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="John Iron" class="w-full h-44 object-cover">
-<div class="p-4">
-<div class="font-semibold">John Iron</div>
-<div class="text-sm opacity-70">Experimental</div>
-</div>
-</article>
-<article class="rounded-2xl overflow-hidden card-border glass">
-<img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="Capibara" class="w-full h-44 object-cover">
-<div class="p-4">
-<div class="font-semibold">Capibara</div>
-<div class="text-sm opacity-70">Hip‑Hop / Rap</div>
-</div>
-</article>
-</div>
+<!-- Videos 1 & 2 -->
+<section id="page4" class="py-24 bg-neutral-900/50 border-y border-white/5">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-black mb-12">Latest Release</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="rounded-3xl overflow-hidden shadow-2xl glass card-border" data-aos="zoom-in">
+        <div class="aspect-video">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/hzezAOSZMjk" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="p-4 text-left font-bold">The Spy - New Single Official MV</div>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-2xl glass card-border" data-aos="zoom-in" data-aos-delay="200" id="page5">
+        <div class="aspect-video">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/5NV6Rdv1a3I" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="p-4 text-left font-bold">Live Session : TSP Special</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="page3">
-<h1>Featured Artists 2</h1>
-<p>แนะนำศิลปินกลุ่มที่สองจากค่าย TSP</p>
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<article class="rounded-2xl overflow-hidden card-border glass">
-<img src="channels4_profile 1.jpg" alt="คณะรถเล็ก" class="w-full h-44 object-cover">
-<div class="p-4">
-<div class="font-semibold">คณะรถเล็ก</div>
-<div class="text-sm opacity-70">Folk / Indie</div>
-</div>
-</article>
-<article class="rounded-2xl overflow-hidden card-border glass">
-<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop" alt="คณะรถใหญ่" class="w-full h-44 object-cover">
-<div class="p-4">
-<div class="font-semibold">คณะรถใหญ่</div>
-<div class="text-sm opacity-70">Rock</div>
-</div>
-</article>
-</div>
+<!-- About 1 & 2 -->
+<section id="page6" class="py-24">
+  <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <div data-aos="fade-right">
+      <h2 class="text-5xl font-black mb-8 leading-tight">สร้างสรรค์เพื่อ <br><span class="text-yellow-400 underline decoration-white/10">ศิลปินยุคใหม่</span></h2>
+      <p class="text-neutral-400 text-lg mb-6 leading-relaxed">TSP Entertainment เราไม่ได้เป็นแค่ค่ายเพลง แต่เราคือ "Partner" ของศิลปิน เราทำงานร่วมกันตั้งแต่กระบวนการแต่งเพลง การทำโปรดักชั่น ไปจนถึงการทำการตลาดระดับสากล</p>
+      <ul class="space-y-4 font-semibold text-neutral-300" id="page7">
+        <li><i class="fa-solid fa-circle-check text-yellow-400 mr-2"></i> สนับสนุนงบประมาณการผลิตครบวงจร</li>
+        <li><i class="fa-solid fa-circle-check text-yellow-400 mr-2"></i> ทีม Producer มืออาชีพดูแลใกล้ชิด</li>
+        <li><i class="fa-solid fa-circle-check text-yellow-400 mr-2"></i> แผนโปรโมตทั้งในไทยและต่างประเทศ</li>
+      </ul>
+    </div>
+    <div class="relative" data-aos="fade-left">
+      <img src="https://images.unsplash.com/photo-1507209696999-4f4b6d9b7a7b?q=80&w=1600&auto=format&fit=crop" class="rounded-[3rem] shadow-3xl shadow-yellow-400/10 grayscale hover:grayscale-0 transition-all duration-700">
+      <div class="absolute -bottom-10 -right-10 glass card-border p-8 rounded-3xl text-center shadow-2xl">
+        <div class="text-4xl font-black text-yellow-400">10+</div>
+        <div class="text-xs uppercase tracking-widest font-bold">Artists</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="page4">
-<h1>Latest Videos 1</h1>
-<p>ชมวิดีโอของศิลปินกลุ่มแรก</p>
+<!-- Contact & News -->
+<section id="page8" class="py-24 bg-black relative">
+  <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
+    <div data-aos="fade-up">
+      <h2 class="text-4xl font-black mb-8">Work With Us</h2>
+      <form class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" placeholder="ชื่อของคุณ" class="bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-yellow-400 transition-all w-full">
+          <input type="email" placeholder="อีเมลติดต่อ" class="bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-yellow-400 transition-all w-full">
+        </div>
+        <textarea placeholder="แนะนำตัว / ส่งลิงก์ DEMO ผลงานของคุณ" rows="5" class="bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-yellow-400 transition-all w-full"></textarea>
+        <button class="bg-white text-black w-full py-4 rounded-2xl font-black hover:bg-yellow-400 transition-all transform active:scale-95 shadow-xl">
+          SUBMIT FORM
+        </button>
+      </form>
+    </div>
+    
+    <div id="page9" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-4xl font-black mb-8">Latest News</h2>
+      <div class="space-y-6">
+        <div class="glass card-border p-6 rounded-2xl group cursor-pointer hover:bg-white/5 transition-all">
+          <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest">May 2024</span>
+          <h3 class="text-xl font-bold mt-2">เปิดออดิชั่นศิลปินหน้าใหม่ รอบประจำปี 2567</h3>
+          <p class="text-neutral-500 text-sm mt-2">โอกาสครั้งสำคัญสำหรับนักร้อง/นักดนตรีที่มีสไตล์เป็นของตัวเอง...</p>
+        </div>
+        <div class="glass card-border p-6 rounded-2xl group cursor-pointer hover:bg-white/5 transition-all">
+          <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest">April 2024</span>
+          <h3 class="text-xl font-bold mt-2">The Spy คว้ารางวัลศิลปินหน้าใหม่ยอดเยี่ยม</h3>
+          <p class="text-neutral-500 text-sm mt-2">จากเวทีประกวดดนตรีระดับประเทศ...</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="page5">
-<h1>Latest Videos 2</h1>
-<p>ชมวิดีโอของศิลปินกลุ่มที่สอง</p>
+<!-- Summary Section -->
+<section id="page10" class="py-24 border-t border-white/5">
+  <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-black mb-12">TSP Summary</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="glass card-border p-8 rounded-[2rem]">
+        <div class="text-yellow-400 text-2xl mb-4"><i class="fa-solid fa-microphone-lines"></i></div>
+        <h4 class="font-black text-xl mb-3 text-white">Talent Driven</h4>
+        <p class="text-sm text-neutral-500">มุ่งเน้นการดึงศักยภาพที่แท้จริงของศิลปินออกมาโดยไม่ตีกรอบความคิดสร้างสรรค์</p>
+      </div>
+      <div class="glass card-border p-8 rounded-[2rem]">
+        <div class="text-yellow-400 text-2xl mb-4"><i class="fa-solid fa-globe"></i></div>
+        <h4 class="font-black text-xl mb-3 text-white">Global Vision</h4>
+        <p class="text-sm text-neutral-500">ยกระดับมาตรฐานโปรดักชั่นไทยให้ทัดเทียมระดับโลกในทุกขั้นตอน</p>
+      </div>
+      <div class="glass card-border p-8 rounded-[2rem]">
+        <div class="text-yellow-400 text-2xl mb-4"><i class="fa-solid fa-heart"></i></div>
+        <h4 class="font-black text-xl mb-3 text-white">Community First</h4>
+        <p class="text-sm text-neutral-500">สร้างความสัมพันธ์ที่ยั่งยืนระหว่างศิลปิน แฟนคลับ และทีมงาน</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="page6">
-<h1>About TSP Entertainment 1</h1>
-<p>ข้อมูลทั่วไปเกี่ยวกับค่ายเพลงและปรัชญาของเรา</p>
-</section>
-
-<section id="page7">
-<h1>About TSP Entertainment 2</h1>
-<p>เน้นรายละเอียดการทำงานและการสนับสนุนศิลปินของเรา</p>
-</section>
-
-<section id="page8" class="page">
-<h1>Contact Us</h1>
-<form>
-<input type="text" placeholder="ชื่อของคุณ" required>
-<input type="email" placeholder="อีเมล" required>
-<textarea placeholder="ข้อความ" rows="5" required></textarea>
-<button type="submit">ส่งข้อความ</button>
-</form>
-</section>
-
-<section id="page9" class="page">
-<h1>TSP News</h1>
-<ul>
-<li>เปิดตัว MV ใหม่จากศิลปินหน้าใหม่</li>
-<li>คอนเสิร์ตสดครั้งแรกของ TSP Entertainment</li>
-<li>Workshop และกิจกรรมสำหรับแฟนคลับ</li>
-</ul>
-</section>
-
-<section id="page10" class="page">
-<h1>TSP Summary</h1>
-<ul>
-<li>ศิลปินที่เปิดตัวและผลงานล่าสุด</li>
-<li>วิดีโอและ MV ที่แฟน ๆ ชื่นชอบ</li>
-<li>ข่าวสารและกิจกรรมสำคัญของ TSP Entertainment</li>
-</ul>
-</section>
-
-<footer>
-<div>© 2024-2025 TSP Entertainment. All rights reserved.</div>
+<footer class="py-12 border-t border-white/5 text-center">
+  <div class="mb-6 space-x-6 text-xl">
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+  </div>
+  <div class="text-xs text-neutral-600 font-bold tracking-widest uppercase">
+    © 2024-2025 TSP Entertainment. Crafted for New Generation.
+  </div>
 </footer>
 
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+  // Initialize Animation on Scroll
+  AOS.init({ duration: 1000, once: true, offset: 100 });
 
-// Navbar tab functionality
-const navLinks = document.querySelectorAll('nav a');
-const pages = document.querySelectorAll('.page');
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    pages.forEach(p => p.classList.remove('active'));
-    const target = link.getAttribute('data-target');
-    document.getElementById(target).classList.add('active');
-    window.scrollTo(0,0);
+  // Smooth Scroll for Navigation
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      document.querySelector(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
   });
-});
 </script>
+
 </body>
 </html>
-
-
-
-
-
