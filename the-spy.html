@@ -3,137 +3,220 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TSP Entertainment — Official</title>
-  <meta name="description" content="TSP Entertainment — ค่ายเพลงและศิลปินจากประเทศไทย" />
+  <title>The Spy — TSP Entertainment Official</title>
+  <meta name="description" content="The Spy — วงดนตรีร็อกและเฮฟวีเมทัลจากประเทศไทย" />
+  
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;800&family=Inter:wght@400;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(8px); }
+    body { font-family: 'Prompt', sans-serif; }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); }
     .card-border { border: 1px solid rgba(255,255,255,0.08); }
+    .rock-gradient { background: linear-gradient(to bottom, #171717, #000); }
+    .text-glow { text-shadow: 0 0 15px rgba(255,255,255,0.2); }
+    .timeline-dot { position: relative; }
+    .timeline-dot::before { content: ''; position: absolute; left: -21px; top: 10px; width: 10px; height: 10px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 10px #ef4444; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 
-<body class="bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white antialiased">
+<body class="rock-gradient text-white antialiased">
 
 <!-- ================= NAVBAR ================= -->
-<header class="sticky top-0 z-50 bg-black/50 backdrop-blur glass border-b border-white/10">
-  <nav class="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
-    <a href="#home" class="font-bold text-lg flex items-center gap-2">
-      🎵 TSP Entertainment
+<header class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="font-black text-xl tracking-tighter hover:text-red-500 transition-colors">
+      TSP <span class="font-light text-neutral-400 uppercase text-xs tracking-widest ml-1">Entertainment</span>
     </a>
-    <div class="hidden md:flex gap-6 text-sm opacity-90">
-      <a href="index.html" class="hover:underline">หน้าแรก</a>
-      <a href="#artists" class="hover:underline">ศิลปิน</a>
-      <a href="#videos" class="hover:underline">วีดีโอ</a>
-      <a href="#contact" class="hover:underline">ติดต่อเรา</a>
+    <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold opacity-70">
+      <a href="index.html" class="hover:text-red-500 transition-colors">Home</a>
+      <a href="#biography" class="hover:text-red-500 transition-colors">Biography</a>
+      <a href="#discography" class="hover:text-red-500 transition-colors">Discography</a>
+      <a href="#contact" class="hover:text-red-500 transition-colors">Contact</a>
     </div>
   </nav>
 </header>
 
-<!-- ================= THE SPY PROFILE ================= -->
-<section id="the-spy" class="border-t border-white/10 py-20">
-  <div class="max-w-5xl mx-auto px-5">
+<!-- ================= HERO SECTION ================= -->
+<section class="relative pt-32 pb-20 overflow-hidden">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-red-600/10 blur-[120px] rounded-full -z-10"></div>
+  
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+      <!-- Profile Image -->
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-purple-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+        <img src="521548783_17863265091434202_5689502785759297553_n.jpg"
+             class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-[2rem] card-border grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl"
+             alt="The Spy Artist Profile">
+      </div>
 
-    <!-- Header -->
-    <div class="flex flex-col md:flex-row gap-8">
-      <img src="521548783_17863265091434202_5689502785759297553_n.jpg"
-           class="w-full md:w-72 h-72 object-cover rounded-3xl card-border glass"
-           alt="The Spy">
-
-      <div>
-        <h2 class="text-4xl font-extrabold">The Spy</h2>
-        <p class="mt-2 text-lg opacity-80">Thai Rock / Heavy Metal</p>
-        <p class="mt-4 opacity-90 leading-relaxed">
-          วงดนตรีร็อกและเฮฟวีเมทัลจากประเทศไทย
-          ถ่ายทอดเพลงช้าที่บาดลึกกินใจ
-          และเพลงเร็วที่หนักแน่น ดุดัน เต็มพลัง
+      <!-- Quick Info -->
+      <div class="text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 border border-red-600/20 text-red-500 text-xs font-bold tracking-widest uppercase mb-6">
+          <i class="fa-solid fa-bolt-lightning animate-pulse"></i> Featured Artist
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter text-glow">The Spy</h1>
+        <p class="text-2xl font-light text-neutral-400 mb-6 uppercase tracking-widest">Thai Rock / Heavy Metal</p>
+        <p class="max-w-xl text-neutral-400 leading-relaxed text-lg italic">
+          "ถ่ายทอดเพลงช้าที่บาดลึกกินใจ และเพลงเร็วที่หนักแน่น ดุดัน เต็มพลังความร็อกระดับตำนาน"
         </p>
+        <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+          <button class="bg-white text-black px-8 py-3 rounded-full font-black hover:bg-red-600 hover:text-white transition-all transform hover:scale-105">LISTEN NOW</button>
+          <button class="glass border border-white/10 px-8 py-3 rounded-full font-bold hover:bg-white/5 transition-all">FOLLOW US</button>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Biography -->
-    <div class="mt-14 space-y-10">
+<!-- ================= CONTENT GRID ================= -->
+<main class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+  <div class="grid lg:grid-cols-3 gap-16">
+    
+    <!-- Left Column: Bio & Members -->
+    <div class="lg:col-span-2 space-y-20">
+      
+      <section id="biography">
+        <h2 class="text-3xl font-black mb-8 flex items-center gap-4">
+          <span class="w-12 h-1 bg-red-600"></span> BIOGRAPHY
+        </h2>
+        <div class="space-y-6 text-neutral-400 leading-relaxed text-lg">
+          <p>
+            ก่อตั้งขึ้นในปี พ.ศ. 2567 โดยการรวมตัวของกลุ่มนักดนตรีฝีมือฉกาจ <strong>นิว, โน่, เสียงวัว, แกรี่ และ หมี</strong> ด้วยความหลงใหลในกลิ่นอายดนตรีร็อกเข้มข้น พวกเขาจึงร่วมกันสรรสร้างตัวตนในนาม <span class="text-white font-bold">"The Spy"</span>
+          </p>
+          <p>
+            ด้วยวิสัยทัศน์ของ <strong>ทวีชัย กริดรัมย์ (นิว)</strong> ผู้เป็นทั้งร้องนำและผู้ก่อตั้งค่าย <span class="text-white">TSP Entertainment</span> ทำให้วงมีการเติบโตที่ก้าวกระโดดและมีผลงานที่ชัดเจนอย่างต่อเนื่อง
+          </p>
+        </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">ประวัติการก่อตั้ง</h3>
-        <p class="opacity-90 leading-relaxed">
-          พ.ศ. 2567 นิว โน่ เสียงวัว แกรี่ และ หมี
-          ได้รวมตัวกันก่อตั้งวงดนตรีแนวร็อกและเฮฟวีเมทัล
-          ในนาม <strong>The Spy</strong>
-          โดยมีเอกลักษณ์คือเพลงช้าที่สื่ออารมณ์บาดลึก
-          และเพลงเร็วที่เน้นจังหวะหนักแน่น
-        </p>
-      </div>
+        <!-- Members Grid -->
+        <div class="mt-12 grid sm:grid-cols-2 gap-4">
+          <div class="glass p-4 rounded-2xl border border-white/5 flex items-center gap-4 group hover:border-red-600/50 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-microphone"></i></div>
+            <div>
+              <div class="font-bold">ทวีชัย กริดรัมย์ (นิว)</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-widest">ร้องนำ / กีตาร์</div>
+            </div>
+          </div>
+          <div class="glass p-4 rounded-2xl border border-white/5 flex items-center gap-4 group hover:border-red-600/50 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-guitar"></i></div>
+            <div>
+              <div class="font-bold">ไดโนเสาร์ กริดรัมย์ (โน่)</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-widest">กีตาร์โซโล่</div>
+            </div>
+          </div>
+          <div class="glass p-4 rounded-2xl border border-white/5 flex items-center gap-4 group hover:border-red-600/50 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-drum"></i></div>
+            <div>
+              <div class="font-bold">แกรี่ กริดรัมย์</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-widest">กลอง</div>
+            </div>
+          </div>
+          <div class="glass p-4 rounded-2xl border border-white/5 flex items-center gap-4 group hover:border-red-600/50 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-keyboard"></i></div>
+            <div>
+              <div class="font-bold">หมี กริดรัมย์</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-widest">คีย์บอร์ด</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">การเข้าสังกัดค่าย</h3>
-        <p class="opacity-90 leading-relaxed">
-          ต่อมา ทวีชัย กริดรัมย์ (นิว เดอะสปาย)
-          ได้ก่อตั้งค่ายเพลง <strong>TSP Entertainment</strong>
-          และนำวง The Spy เข้าสู่การดูแลของค่าย
-        </p>
-      </div>
+      <section id="discography">
+        <h2 class="text-3xl font-black mb-8 flex items-center gap-4">
+          <span class="w-12 h-1 bg-red-600"></span> ALBUMS
+        </h2>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="group cursor-pointer text-center">
+            <div class="aspect-square bg-neutral-800 rounded-xl overflow-hidden mb-4 relative shadow-xl">
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/60 transition-opacity"><i class="fa-solid fa-play text-3xl"></i></div>
+              <div class="w-full h-full flex items-center justify-center font-black text-xs text-neutral-600 uppercase tracking-tighter">Ounanik</div>
+            </div>
+            <h4 class="font-bold">อูนานิค</h4>
+            <p class="text-xs text-neutral-500 uppercase mt-1">14 APR 2024</p>
+          </div>
+          <div class="group cursor-pointer text-center">
+            <div class="aspect-square bg-neutral-800 rounded-xl overflow-hidden mb-4 relative shadow-xl">
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/60 transition-opacity"><i class="fa-solid fa-play text-3xl"></i></div>
+              <div class="w-full h-full flex items-center justify-center font-black text-xs text-neutral-600 uppercase p-4">Modern People</div>
+            </div>
+            <h4 class="font-bold">คนยุคใหม่ไฉไลว่าเดิม</h4>
+            <p class="text-xs text-neutral-500 uppercase mt-1">06 JUN 2024</p>
+          </div>
+          <div class="group cursor-pointer text-center">
+            <div class="aspect-square bg-green-900/30 rounded-xl overflow-hidden mb-4 relative shadow-xl border border-green-500/20">
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/60 transition-opacity"><i class="fa-solid fa-play text-3xl"></i></div>
+              <div class="w-full h-full flex items-center justify-center font-black text-xs text-green-500/40 uppercase">Green Album</div>
+            </div>
+            <h4 class="font-bold italic">ปกเขียว</h4>
+            <p class="text-xs text-neutral-500 uppercase mt-1">01 OCT 2024</p>
+          </div>
+        </div>
+      </section>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">สถานะปัจจุบัน</h3>
-        <ul class="list-disc list-inside space-y-2 opacity-90">
-          <li>มีอัลบั้มแล้ว 2 อัลบั้ม: อูนานิก, คนยุคใหม่ไฉไลว่าเดิม</li>
-          <li>1 ต.ค. 2567 — อัลบั้ม ปกเขียว (ซิงเกิล เธอคนดีใช่ไหม)</li>
-          <li>13 พ.ย. 2567 — ปีศาจร้าย</li>
-          <li>5 เม.ย. 2568 — ฝันร้ายโรงทาน</li>
-          <li>2 ก.ค. 2568 — ไฟที่ยังไม่ดับ</li>
-          <li>24 พ.ย. 2568 - ก้าวไปข้างหน้า</li>
-          <li>11 ธ.ค. 2568 - เส้นขนานความทรงจำ และ A Solitary Farewell (เพลงนี้เป็นเพลงบรรเลง)</li>
+    </div>
+
+    <!-- Right Column: Timeline & Side Info -->
+    <div class="space-y-12">
+      <div class="glass p-8 rounded-[2rem] border border-white/5">
+        <h3 class="text-xl font-black mb-8 tracking-widest">RELEASE TIMELINE</h3>
+        <div class="border-l-2 border-white/5 ml-2 space-y-10">
           
-        </ul>
-      </div>
+          <div class="timeline-dot ml-6">
+            <div class="text-xs font-bold text-red-500 uppercase mb-1">13 Nov 2024</div>
+            <div class="font-bold">ปีศาจร้าย</div>
+            <div class="text-sm text-neutral-500 mt-1">Official Single</div>
+          </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">สมาชิกวง</h3>
-        <div class="grid sm:grid-cols-2 gap-3 opacity-90">
-          <div>ทวีชัย กริดรัมย์ (นิว) — ร้องนำ / กีตาร์</div>
-          <div>ไดโนเสาร์ กริดรัมย์ (โน่) — กีตาร์</div>
-          <div>เสียงวัว กริดรัมย์ — เบส</div>
-          <div>แกรี่ กริดรัมย์ — กลอง</div>
-          <div>หมี กริดรัมย์ — คีย์บอร์ด</div>
+          <div class="timeline-dot ml-6 opacity-60">
+            <div class="text-xs font-bold text-neutral-500 uppercase mb-1">05 Apr 2025</div>
+            <div class="font-bold">ฝันร้ายโรงทาน</div>
+            <div class="text-sm text-neutral-500 mt-1">Upcoming Release</div>
+          </div>
+
+          <div class="timeline-dot ml-6 opacity-60">
+            <div class="text-xs font-bold text-neutral-500 uppercase mb-1">02 Jul 2025</div>
+            <div class="font-bold">ไฟที่ยังไม่ดับ</div>
+            <div class="text-sm text-neutral-500 mt-1">Upcoming Release</div>
+          </div>
+
+          <div class="timeline-dot ml-6 opacity-60">
+            <div class="text-xs font-bold text-neutral-500 uppercase mb-1">11 Dec 2025</div>
+            <div class="font-bold leading-tight">เส้นขนานความทรงจำ / A Solitary Farewell</div>
+            <div class="text-sm text-neutral-500 mt-1 italic">Instrumental Piece</div>
+          </div>
+
         </div>
       </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">อัลบั้ม</h3>
-        <ul class="list-disc list-inside opacity-90">
-          <li>อูนานิค — 14 เม.ย. 2567</li>
-          <li>คนยุคใหม่ไฉไลว่าเดิม — 6 มิ.ย. 2567</li>
-          <li>ปกเขียว — 1 ต.ค. 2567</li>
-        </ul>
+      <div id="contact" class="glass p-8 rounded-[2rem] border border-white/5">
+        <h3 class="text-xl font-black mb-6">CONTACT US</h3>
+        <form class="space-y-4">
+          <input required placeholder="Your Name" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl outline-none focus:border-red-600 transition-colors text-sm">
+          <input required type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl outline-none focus:border-red-600 transition-colors text-sm">
+          <textarea required rows="4" placeholder="Messages..." class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl outline-none focus:border-red-600 transition-colors text-sm"></textarea>
+          <button class="w-full bg-red-600 py-4 rounded-xl font-black text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-all shadow-xl">SEND MESSAGE</button>
+        </form>
       </div>
-
     </div>
-  </div>
-</section>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="border-t border-white/10 py-16">
-  <div class="max-w-4xl mx-auto px-5">
-    <h3 class="text-3xl font-bold mb-6">Contact</h3>
-    <form class="glass card-border p-6 rounded-2xl"
-          onsubmit="event.preventDefault(); alert('ขอบคุณที่ติดต่อ TSP Entertainment');">
-      <input required placeholder="ชื่อ"
-             class="w-full mb-3 px-3 py-2 rounded-xl bg-black/40">
-      <input required type="email" placeholder="อีเมล"
-             class="w-full mb-3 px-3 py-2 rounded-xl bg-black/40">
-      <textarea required rows="4" placeholder="ข้อความ"
-                class="w-full mb-4 px-3 py-2 rounded-xl bg-black/40"></textarea>
-      <button class="px-6 py-3 bg-white text-black rounded-xl font-semibold">
-        ส่งข้อความ
-      </button>
-    </form>
   </div>
-</section>
+</main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="border-t border-white/10 py-6 text-center text-sm opacity-70">
-  © <span id="year"></span> TSP Entertainment — Buriram, Thailand
+<footer class="py-12 border-t border-white/5 text-center bg-black">
+  <div class="mb-6 space-x-6">
+    <a href="#" class="text-neutral-500 hover:text-red-500 transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#" class="text-neutral-500 hover:text-red-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" class="text-neutral-500 hover:text-red-500 transition-colors text-xl"><i class="fa-brands fa-spotify"></i></a>
+  </div>
+  <p class="text-[10px] text-neutral-600 uppercase tracking-[0.4em] font-bold">
+    © <span id="year"></span> TSP Entertainment — The Spy Official Profile
+  </p>
 </footer>
 
 <script>
@@ -142,6 +225,3 @@
 
 </body>
 </html>
-
-
-
