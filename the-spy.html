@@ -3,248 +3,229 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Spy — TSP Entertainment Official</title>
-  <meta name="description" content="The Spy — วงดนตรีร็อกและเฮฟวีเมทัลจากประเทศไทย" />
+  <title>The Spy (เดอะสปาย) — TSP Entertainment Official</title>
   
-  <!-- Fonts & Tailwind -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;800&family=Inter:wght@400;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    body { font-family: 'Prompt', sans-serif; }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); }
+    :root { scroll-behavior: smooth; }
+    body { font-family: 'Prompt', sans-serif; background-color: #050505; color: #fff; }
+    .glass { background: rgba(255,255,255,0.02); backdrop-filter: blur(15px); }
     .card-border { border: 1px solid rgba(255,255,255,0.08); }
-    .rock-gradient { background: linear-gradient(to bottom, #171717, #000); }
-    .text-glow { text-shadow: 0 0 15px rgba(255,255,255,0.2); }
-    .timeline-dot { position: relative; }
-    .timeline-dot::before { content: ''; position: absolute; left: -21px; top: 10px; width: 10px; height: 10px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 10px #ef4444; }
-    .in-memoriam { border-left: 3px solid #666; padding-left: 1rem; color: #888; font-style: italic; }
-    html { scroll-behavior: smooth; }
+    .text-glow { text-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+    .red-gradient { background: linear-gradient(180deg, #1a0b0b 0%, #050505 100%); }
+    
+    /* สไตล์ตารางเพลง */
+    .track-row { transition: all 0.3s ease; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .track-row:hover { background: rgba(239, 68, 68, 0.05); transform: translateX(10px); }
+    
+    /* สไตล์ Badge */
+    .badge { padding: 2px 10px; border-radius: 99px; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .badge-released { background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2); }
+    .badge-new { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+    .badge-upcoming { background: rgba(234, 179, 8, 0.1); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2); }
+
+    /* Animation */
+    .floating { animation: floating 3s ease-in-out infinite; }
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
   </style>
 </head>
 
-<body class="rock-gradient text-white antialiased">
+<body class="red-gradient antialiased overflow-x-hidden">
 
-<!-- ================= NAVBAR ================= -->
-<header class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
-  <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="index.html" class="font-black text-xl tracking-tighter hover:text-red-500 transition-colors">
-      TSP <span class="font-light text-neutral-400 uppercase text-xs tracking-widest ml-1">Entertainment</span>
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-lg border-b border-white/5 py-4">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <a href="index.html" class="font-black text-2xl tracking-tighter hover:text-red-500 transition-all">
+      TSP <span class="font-light text-neutral-500">ENT</span>
     </a>
-    <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold opacity-70">
-      <a href="index.html" class="hover:text-red-500 transition-colors">Home</a>
-      <a href="#biography" class="hover:text-red-500 transition-colors">Biography</a>
-      <a href="#members" class="hover:text-red-500 transition-colors">Members</a>
-      <a href="#discography" class="hover:text-red-500 transition-colors">Discography</a>
+    <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold opacity-60">
+      <a href="#biography" class="hover:text-red-500">History</a>
+      <a href="#members" class="hover:text-red-500">Members</a>
+      <a href="#discography" class="hover:text-red-500">Discography</a>
+      <a href="#tracks" class="hover:text-red-500">All Songs</a>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>
 
-<!-- ================= HERO SECTION ================= -->
-<section class="relative pt-32 pb-20 overflow-hidden border-b border-white/5">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-red-600/10 blur-[120px] rounded-full -z-10"></div>
-  
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col lg:flex-row gap-12 items-center">
-      <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-purple-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-        <img src="521548783_17863265091434202_5689502785759297553_n.jpg"
-             class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-[2rem] card-border shadow-2xl"
-             alt="The Spy Artist Profile">
+<!-- Hero Section -->
+<section class="relative pt-40 pb-20 px-6">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-red-600/10 blur-[150px] -z-10"></div>
+  <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+    <div class="w-full lg:w-1/2" data-aos="fade-right">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 border border-red-600/20 text-red-500 text-[10px] font-black uppercase tracking-widest mb-6">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+        </span>
+        Official Artist Profile
       </div>
-
-      <div class="text-center lg:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 border border-red-600/20 text-red-500 text-xs font-bold tracking-widest uppercase mb-6">
-          <i class="fa-solid fa-bolt-lightning animate-pulse"></i> Now Touring
-        </div>
-        <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter text-glow uppercase">The Spy</h1>
-        <p class="text-xl font-light text-neutral-400 mb-6 tracking-widest uppercase">
-          Nu-Metal / Deathcore / Heavy Metal
-        </p>
-        <p class="max-w-xl text-neutral-400 leading-relaxed text-lg italic">
-          "จากแรงบันดาลใจ Linkin Park สู่เสียงเพลงที่หนักแน่นและบาดลึกที่สุดในไทย"
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
-          <a href="https://www.youtube.com/@tsp_ent" target="_blank" class="bg-white text-black px-8 py-3 rounded-full font-black hover:bg-red-600 hover:text-white transition-all transform hover:scale-105">LISTEN ON YOUTUBE</a>
-          <button class="glass border border-white/10 px-8 py-3 rounded-full font-bold hover:bg-white/5 transition-all">FOLLOW US</button>
-        </div>
+      <h1 class="text-7xl md:text-9xl font-black mb-4 tracking-tighter text-glow uppercase">The Spy</h1>
+      <p class="text-xl md:text-2xl font-light text-neutral-400 mb-8 tracking-[0.2em] uppercase">Rock • Nu-Metal • Deathcore</p>
+      <div class="glass card-border p-6 rounded-3xl mb-8 italic text-neutral-300 leading-relaxed border-l-4 border-l-red-600">
+        "แรงบันดาลใจจาก Linkin Park สู่ดนตรีร็อกสัญชาติไทยที่หนักหน่วงและบาดลึกที่สุด พร้อมก้าวเข้าสู่ยุคใหม่ของ Deathcore"
+      </div>
+      <div class="flex gap-4">
+        <a href="#tracks" class="bg-white text-black px-10 py-4 rounded-full font-black text-sm hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-red-600/5">VIEW TRACKS</a>
+        <a href="https://www.youtube.com/@tsp_ent" target="_blank" class="glass card-border px-10 py-4 rounded-full font-black text-sm hover:bg-white/5 transition-all">YOUTUBE</a>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/2 flex justify-center" data-aos="zoom-in">
+      <div class="relative floating">
+        <div class="absolute -inset-4 bg-red-600/20 blur-3xl rounded-full"></div>
+        <img src="521548783_17863265091434202_5689502785759297553_n.jpg" class="relative w-[350px] md:w-[450px] h-[350px] md:h-[450px] object-cover rounded-[3rem] card-border shadow-2xl rotate-2 hover:rotate-0 transition-all duration-700">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTENT ================= -->
+<!-- Content Grid -->
 <main class="max-w-6xl mx-auto px-6 py-20">
-  <div class="grid lg:grid-cols-3 gap-16">
-    
-    <!-- Left Column: Biography & Members -->
-    <div class="lg:col-span-2 space-y-24">
-      
+  
+  <!-- History & Members -->
+  <div class="grid lg:grid-cols-3 gap-16 mb-32">
+    <div class="lg:col-span-2 space-y-12" data-aos="fade-up">
       <section id="biography">
-        <h2 class="text-4xl font-black mb-10 flex items-center gap-4 uppercase tracking-tighter">
-          <span class="w-12 h-1 bg-red-600"></span> ประวัติวง
-        </h2>
-        <div class="space-y-6 text-neutral-400 leading-relaxed text-lg">
-          <p>
-            วงดนตรีร็อกและเฮฟวีเมทัลสัญชาติไทย ก่อตั้งขึ้นเมื่อปี <strong>พ.ศ. 2567</strong> ภายใต้สังกัด <strong>TSP Entertainment</strong> และ Believe Music โดยมีเอกลักษณ์คือเพลงช้าที่สื่ออารมณ์บาดลึก และเพลงเร็วที่มีจังหวะหนักแน่น
-          </p>
-          <p>
-            แม้ในช่วงกลางปี 2568 วงจะเผชิญกับการสูญเสียครั้งใหญ่และการยุบวงชั่วคราว แต่ในเดือนพฤศจิกายน 2568 พวกเขาก็กลับมารวมตัวกันอีกครั้งพร้อมการมาของ <strong>Jonathan Iron</strong> เพื่อร่วมกันสร้างสรรค์แนวดนตรีใหม่ๆ ทั้ง Deathcore และ Metalcore ต่อไป
-          </p>
+        <h2 class="text-3xl font-black mb-6 flex items-center gap-4 uppercase"><span class="w-10 h-1 bg-red-600"></span> ประวัติวง</h2>
+        <div class="space-y-6 text-neutral-400 leading-relaxed text-lg font-light">
+          <p>วงดนตรี <strong class="text-white">ร็อก และ เฮฟวี่เมทัล</strong> สัญชาติไทย ก่อตั้งขึ้นเมื่อปี พ.ศ. 2567 สังกัดค่าย TSP Entertainment ด้วยวิสัยทัศน์ของ ทวีชัย กริดรัมย์ (นิว) ที่ต้องการสร้างแนวดนตรีที่หนักแน่นแต่แฝงไปด้วยอารมณ์ที่บาดลึก</p>
+          <p>ในปี 2568 วงได้ผ่านจุดเปลี่ยนสำคัญเมื่อ <strong class="text-white">ไดโนเสาร์ กริดรัมย์ (โน่)</strong> มือกีตาร์ยุคก่อตั้งเสียชีวิตลง ทำให้วงต้องหยุดพักชั่วคราว ก่อนจะกลับมารวมตัวกันอีกครั้ง (Reunion) พร้อมสมาชิกใหม่คือ <strong class="text-white">Jonathan Iron</strong> และมุ่งหน้าสู่แนวดนตรีที่ดุดันขึ้นอย่าง Deathcore และ Metalcore</p>
         </div>
       </section>
 
-      <!-- Members Updated -->
-      <section id="members">
-        <h2 class="text-3xl font-black mb-10 uppercase tracking-widest text-neutral-500">
-          BAND MEMBERS
-        </h2>
+      <section id="members" class="pt-10">
+        <h2 class="text-2xl font-black mb-8 uppercase text-neutral-500 tracking-widest">Members</h2>
         <div class="grid sm:grid-cols-2 gap-4">
-          <!-- Active Members -->
-          <div class="glass p-5 rounded-2xl border border-white/5 flex items-center gap-5">
-            <div class="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center text-red-500"><i class="fa-solid fa-microphone"></i></div>
-            <div>
-              <div class="font-bold">ทวีชัย กริดรัมย์ (นิว)</div>
-              <div class="text-xs text-neutral-500 uppercase">ร้องนำ (Leader)</div>
-            </div>
+          <div class="glass card-border p-4 rounded-2xl flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center font-bold">N</div>
+            <div><div class="font-bold">ทวีชัย กริดรัมย์ (นิว)</div><div class="text-[10px] text-neutral-500 uppercase font-bold">Vocal / Guitar</div></div>
           </div>
-          <div class="glass p-5 rounded-2xl border border-red-600/30 flex items-center gap-5">
-            <div class="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center text-red-500"><i class="fa-solid fa-guitar"></i></div>
-            <div>
-              <div class="font-bold">Jonathan Iron (จอห์น)</div>
-              <div class="text-xs text-red-500 uppercase">กีตาร์ (New Member)</div>
-            </div>
+          <div class="glass card-border p-4 rounded-2xl flex items-center gap-4 border-red-600/30">
+            <div class="w-10 h-10 rounded-full bg-red-800 flex items-center justify-center font-bold">J</div>
+            <div><div class="font-bold text-red-400">Jonathan Iron</div><div class="text-[10px] text-neutral-400 uppercase font-bold">Lead Guitar (2568-)</div></div>
           </div>
-          <div class="glass p-5 rounded-2xl border border-white/5 flex items-center gap-5">
-            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-wave-square"></i></div>
-            <div>
-              <div class="font-bold">เสียงวัว กริดรัมย์</div>
-              <div class="text-xs text-neutral-500 uppercase">เบส</div>
-            </div>
+          <div class="glass card-border p-4 rounded-2xl flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-bold">S</div>
+            <div><div class="font-bold">เสียงวัว กริดรัมย์</div><div class="text-[10px] text-neutral-500 uppercase font-bold">Bass</div></div>
           </div>
-          <div class="glass p-5 rounded-2xl border border-white/5 flex items-center gap-5">
-            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-drum"></i></div>
-            <div>
-              <div class="font-bold">แกรี่ กริดรัมย์</div>
-              <div class="text-xs text-neutral-500 uppercase">กลอง</div>
-            </div>
+          <div class="glass card-border p-4 rounded-2xl flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-bold">G</div>
+            <div><div class="font-bold">แกรี่ กริดรัมย์</div><div class="text-[10px] text-neutral-500 uppercase font-bold">Drums</div></div>
           </div>
-          <div class="glass p-5 rounded-2xl border border-white/5 flex items-center gap-5 col-span-full md:col-span-1">
-            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-red-500"><i class="fa-solid fa-keyboard"></i></div>
-            <div>
-              <div class="font-bold">หมี กริดรัมย์</div>
-              <div class="text-xs text-neutral-500 uppercase">คีย์บอร์ด / DJ / Sampling</div>
-            </div>
+          <div class="glass card-border p-4 rounded-2xl flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-bold">H</div>
+            <div><div class="font-bold">หมี กริดรัมย์</div><div class="text-[10px] text-neutral-500 uppercase font-bold">Keys / DJ / Sampling</div></div>
           </div>
-
           <!-- In Memoriam -->
-          <div class="glass p-5 rounded-2xl border border-white/5 flex items-center gap-5 col-span-full bg-neutral-900/50">
-            <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-600"><i class="fa-solid fa-dove"></i></div>
-            <div class="in-memoriam">
-              <div class="font-bold">ไดโนเสาร์ กริดรัมย์ (โน่)</div>
-              <div class="text-xs uppercase tracking-widest">กีตาร์ (อดีตสมาชิก - เสียชีวิตแล้ว 2568)</div>
-            </div>
+          <div class="glass card-border p-4 rounded-2xl flex items-center gap-4 opacity-50 bg-neutral-900/50 grayscale">
+            <div class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center font-bold">N</div>
+            <div><div class="font-bold italic">โน่ กริดรัมย์ (RIP)</div><div class="text-[10px] text-neutral-500 uppercase font-bold italic">Guitarist (2567-2568)</div></div>
           </div>
         </div>
       </section>
-
-      <section id="discography">
-        <h2 class="text-4xl font-black mb-10 flex items-center gap-4">
-          <span class="w-12 h-1 bg-red-600"></span> อัลบั้มทั้งหมด
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-          <div class="text-center group">
-            <div class="aspect-square glass card-border rounded-2xl mb-4 flex items-center justify-center text-neutral-600 font-black group-hover:border-red-600 transition-all">UNIT 1</div>
-            <h4 class="font-bold uppercase text-sm">อูนานิค</h4>
-            <p class="text-[10px] text-neutral-500 mt-1">2024</p>
-          </div>
-          <div class="text-center group">
-            <div class="aspect-square glass card-border rounded-2xl mb-4 flex items-center justify-center text-neutral-600 font-black group-hover:border-red-600 transition-all">UNIT 2</div>
-            <h4 class="font-bold uppercase text-sm">คนยุคใหม่ไฉไลกว่าเดิม</h4>
-            <p class="text-[10px] text-neutral-500 mt-1">2024</p>
-          </div>
-          <div class="text-center group">
-            <div class="aspect-square bg-green-900/10 card-border border-green-900/50 rounded-2xl mb-4 flex items-center justify-center text-green-500/50 font-black">UNIT 3</div>
-            <h4 class="font-bold uppercase text-sm text-green-500 italic">ปกเขียว</h4>
-            <p class="text-[10px] text-neutral-500 mt-1">2024</p>
-          </div>
-          <div class="text-center group">
-            <div class="aspect-square glass card-border rounded-2xl mb-4 flex items-center justify-center text-neutral-600 font-black group-hover:border-red-600 transition-all italic">UNIT 4</div>
-            <h4 class="font-bold uppercase text-sm">นมจืด</h4>
-            <p class="text-[10px] text-neutral-500 mt-1">2025</p>
-          </div>
-          <div class="text-center group">
-            <div class="aspect-square glass card-border rounded-2xl mb-4 flex items-center justify-center text-neutral-600 font-black group-hover:border-red-600 transition-all">UNIT 5</div>
-            <h4 class="font-bold uppercase text-sm">ฝนตกที่เดิม</h4>
-            <p class="text-[10px] text-neutral-500 mt-1">2026</p>
-          </div>
-        </div>
-      </section>
-
     </div>
 
-    <!-- Right Column: Timeline & Side Info -->
-    <div class="space-y-12">
-      <div class="glass p-8 rounded-[2rem] border border-white/5">
-        <h3 class="text-xl font-black mb-8 tracking-widest text-red-500 uppercase">Timeline 2025-2026</h3>
-        <div class="border-l-2 border-white/5 ml-2 space-y-10">
-          
-          <div class="timeline-dot ml-6">
-            <div class="text-xs font-bold text-red-500 uppercase mb-1">05 APR 2025</div>
-            <div class="font-bold italic">อัลบั้มชุดที่ 4 : นมจืด</div>
-            <div class="text-sm text-neutral-500 mt-1">ซิงเกิล: ฝันร้ายโรงทาน</div>
-          </div>
-
-          <div class="timeline-dot ml-6">
-            <div class="text-xs font-bold text-neutral-500 uppercase mb-1">02 JUL 2025</div>
-            <div class="font-bold">ซิงเกิล: ไฟที่ยังไม่ดับ</div>
-            <div class="text-sm text-neutral-500 mt-1 italic">(The Spy ยุคแรกชั่วคราว)</div>
-          </div>
-
-          <div class="timeline-dot ml-6">
-            <div class="text-xs font-bold text-red-500 uppercase mb-1">24 NOV 2025</div>
-            <div class="font-bold uppercase">REUNION</div>
-            <div class="text-sm text-neutral-500 mt-1">ซิงเกิล: ก้าวไปข้างหน้า</div>
-          </div>
-
-          <div class="timeline-dot ml-6">
-            <div class="text-xs font-bold text-neutral-500 uppercase mb-1">11 DEC 2025</div>
-            <div class="font-bold">เส้นขนานความทรงจำ</div>
-            <div class="text-sm text-neutral-500 mt-1 italic">และ A Solitary Farewell</div>
-          </div>
-
-          <div class="timeline-dot ml-6">
-            <div class="text-xs font-bold text-yellow-500 uppercase mb-1">17 JAN 2026</div>
-            <div class="font-bold">โทรทัศน์ไม่อยากรับสาย</div>
-            <div class="text-sm text-neutral-500 mt-1">New Gen (DeathCore Style)</div>
-          </div>
-
+    <!-- Album Sidebar -->
+    <div class="space-y-8" id="discography" data-aos="fade-left">
+      <h3 class="text-xl font-black uppercase tracking-widest text-red-500">Studio Albums</h3>
+      <div class="space-y-4">
+        <div class="glass card-border p-5 rounded-3xl group cursor-pointer hover:bg-white/5 transition-all">
+          <div class="text-[10px] text-neutral-500 font-bold mb-1">UNIT 01 / 2567</div>
+          <div class="font-black uppercase group-hover:text-red-500 transition-colors">อูนานิค</div>
+        </div>
+        <div class="glass card-border p-5 rounded-3xl group cursor-pointer hover:bg-white/5 transition-all">
+          <div class="text-[10px] text-neutral-500 font-bold mb-1">UNIT 02 / 2567</div>
+          <div class="font-black uppercase group-hover:text-red-500 transition-colors">คนยุคใหม่ไฉไลกว่าเดิม</div>
+        </div>
+        <div class="glass card-border p-5 rounded-3xl border-green-900/30 bg-green-900/5 group cursor-pointer">
+          <div class="text-[10px] text-green-700 font-bold mb-1 uppercase tracking-widest italic">Green Project</div>
+          <div class="font-black uppercase text-green-500">ปกเขียว</div>
+        </div>
+        <div class="glass card-border p-5 rounded-3xl group cursor-pointer hover:bg-white/5 transition-all">
+          <div class="text-[10px] text-neutral-500 font-bold mb-1">UNIT 04 / 2568</div>
+          <div class="font-black uppercase group-hover:text-red-500 transition-colors">นมจืด</div>
+        </div>
+        <div class="glass card-border p-5 rounded-3xl group cursor-pointer hover:bg-white/5 transition-all">
+          <div class="text-[10px] text-neutral-500 font-bold mb-1">UNIT 05 / 2569</div>
+          <div class="font-black uppercase group-hover:text-red-500 transition-colors text-yellow-500">ฝนตกที่เดิม</div>
         </div>
       </div>
-
-      <div class="glass p-8 rounded-[2rem] border border-white/5">
-        <h3 class="text-xl font-black mb-6 uppercase">Inspiration</h3>
-        <p class="text-neutral-500 text-sm leading-relaxed">
-          The Spy มุ่งมั่นพัฒนาแนวดนตรีโดยได้รับแรงบันดาลใจหลักจาก <strong class="text-white">Linkin Park</strong> พร้อมผสมผสานความเป็นไทยและความหนักหน่วงของ Metalcore สมัยใหม่
-        </p>
-      </div>
     </div>
-
   </div>
+
+  <!-- Songs Table -->
+  <section id="tracks" class="py-20 border-t border-white/5">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4" data-aos="fade-up">
+      <div>
+        <h2 class="text-4xl font-black uppercase tracking-tighter italic">Tracklist</h2>
+        <p class="text-neutral-500 text-sm">รวมผลงานเพลงทั้งหมดของ The Spy (2567-2569)</p>
+      </div>
+      <div class="flex gap-2">
+        <span class="badge badge-released">Released</span>
+        <span class="badge badge-new">New Genre</span>
+        <span class="badge badge-upcoming">Upcoming</span>
+      </div>
+    </div>
+
+    <div class="glass card-border rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-up">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-white/5 text-neutral-500 uppercase text-[10px] tracking-[0.2em] font-bold">
+            <tr>
+              <th class="p-6">Year</th>
+              <th class="p-6">Song Title</th>
+              <th class="p-6">Album / Project</th>
+              <th class="p-6">Status</th>
+            </tr>
+          </thead>
+          <tbody class="font-medium">
+            <!-- 2567 -->
+            <tr class="track-row"><td class="p-6 opacity-40">2567</td><td class="p-6">อูนานิค</td><td class="p-6 italic">อูนานิค</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2567</td><td class="p-6">สิ่งที่ทำไม่เป็นความจริง</td><td class="p-6">คนยุคใหม่ไฉไลกว่าเดิม</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2567</td><td class="p-6 text-green-500">เธอคนดีใช่ไหม</td><td class="p-6 italic">ปกเขียว</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2567</td><td class="p-6">ปีศาจร้าย</td><td class="p-6">-</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+            
+            <!-- 2568 -->
+            <tr class="track-row"><td class="p-6 opacity-40">2568</td><td class="p-6">ฝันร้ายโรงทาน</td><td class="p-6 italic">นมจืด</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2568</td><td class="p-6">ไฟที่ยังไม่ดับ</td><td class="p-6">-</td><td class="p-6"><span class="badge badge-released text-blue-500 border-blue-500/20">Final (Old Gen)</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2568</td><td class="p-6 text-red-500">ก้าวไปข้างหน้า</td><td class="p-6 font-black">REUNION</td><td class="p-6"><span class="badge badge-new">New Gen</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2568</td><td class="p-6">เส้นขนานความทรงจำ</td><td class="p-6 italic">ฝนตกที่เดิม</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2568</td><td class="p-6 text-neutral-400">A Solitary Farewell</td><td class="p-6">Instrumental</td><td class="p-6"><span class="badge badge-released">Released</span></td></tr>
+
+            <!-- 2569 -->
+            <tr class="track-row bg-red-600/5"><td class="p-6 opacity-40">2569</td><td class="p-6 font-bold text-red-500 uppercase">โทรทัศน์ไม่อยากรับสาย</td><td class="p-6 italic">ฝนตกที่เดิม</td><td class="p-6"><span class="badge badge-new">Deathcore</span></td></tr>
+            <tr class="track-row bg-red-600/5"><td class="p-6 opacity-40">2569</td><td class="p-6 font-bold text-red-500 uppercase">เน็ตที่ยังไม่ตัด</td><td class="p-6 italic">ฝนตกที่เดิม</td><td class="p-6"><span class="badge badge-new">Deathcore</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2569</td><td class="p-6 italic">อย่ารีบไป</td><td class="p-6">Single</td><td class="p-6"><span class="badge badge-upcoming">08 Mar 2569</span></td></tr>
+            <tr class="track-row"><td class="p-6 opacity-40">2569</td><td class="p-6 italic">เธอไม่รักฉัน</td><td class="p-6">Single</td><td class="p-6"><span class="badge badge-upcoming">23 Mar 2569</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
+<!-- Footer -->
 <footer class="py-12 border-t border-white/5 text-center bg-black">
   <div class="mb-6 space-x-6">
-    <a href="https://www.youtube.com/@tsp_ent" target="_blank" class="text-neutral-500 hover:text-red-500 transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
-    <a href="#" class="text-neutral-500 hover:text-red-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.youtube.com/@tsp_ent" target="_blank" class="text-neutral-500 hover:text-red-500 transition-colors text-2xl"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#" class="text-neutral-500 hover:text-red-500 transition-colors text-2xl"><i class="fa-brands fa-facebook"></i></a>
   </div>
-  <p class="text-[10px] text-neutral-600 uppercase tracking-[0.4em] font-bold">
-    © <span id="year"></span> TSP Entertainment — The Spy Official Profile
+  <p class="text-[10px] text-neutral-700 uppercase tracking-[0.5em] font-bold">
+    © 2024-2026 TSP Entertainment — The Spy Project Official
   </p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init({ duration: 1000, once: true });
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
