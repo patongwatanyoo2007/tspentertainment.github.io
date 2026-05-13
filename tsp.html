@@ -5,210 +5,242 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TSP Entertainment — Landing</title>
   <meta name="description" content="TSP Entertainment — ค่ายเพลง แผงศิลปินใหม่จากประเทศไทย" />
-  <!-- Tailwind Play CDN for quick prototyping -->
+  
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Kanit:wght@300;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-    /* Small extras */
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
-    .card-border { border: 1px solid rgba(255,255,255,0.06); }
+    body { font-family: 'Inter', 'Kanit', sans-serif; }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); }
+    .card-border { border: 1px solid rgba(255,255,255,0.1); }
+    .text-gradient { background: linear-gradient(to right, #fff, #a3a3a3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body class="bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white antialiased">
+
+<body class="bg-[#0a0a0a] text-white antialiased overflow-x-hidden">
+
   <!-- Navbar -->
-  <header class="sticky top-0 z-40 bg-black/40 backdrop-blur glass border-b border-white/6">
+  <header class="sticky top-0 z-50 bg-black/60 backdrop-blur-lg border-b border-white/5">
     <nav class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3 font-semibold text-lg">
-        <!-- music icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-2v13"/></svg>
-        TSP Entertainment
+      <a href="#home" class="flex items-center gap-3 font-bold text-xl tracking-tighter hover:opacity-80 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13"/></svg>
+        TSP <span class="font-light text-neutral-400">ENT</span>
       </a>
-      <div class="hidden md:flex items-center gap-6 text-sm opacity-90">
-        <a href="#artists" class="hover:underline">Artists</a>
-        <a href="#videos" class="hover:underline">Videos</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium opacity-70">
+        <a href="#artists" class="hover:text-white transition-colors">Artists</a>
+        <a href="#videos" class="hover:text-white transition-colors">Videos</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </div>
-      <div class="flex items-center gap-3">
-        <a href="https://www.youtube.com/@tsp_ent" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-2 rounded-md ring-1 ring-white/10">
-          <!-- YouTube icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-1-1.7-1-2.1-1.1C16.8 2.5 12 2.5 12 2.5h-.1s-4.8 0-8.6.3c-.5 0-1.3.1-2.1 1.1-.6.7-.8 2.3-.8 2.3S0 8 0 9.8v2.4C0 14 0 15.6.4 17.6c.2.9.6 1.5 1.2 2 1 .8 2.3.8 2.9.9 2.1.2 9.1.3 9.1.3s4.8 0 8.6-.3c.5 0 1.3-.1 2.1-1.1.6-.7.8-2.3.8-2.3s.2-1.6.2-3.4V9.8c0-1.8-.2-3.6-.2-3.6z"/></svg>
-          YouTube
-        </a>
-      </div>
+      <a href="https://www.youtube.com/@tsp_ent" target="_blank" class="px-4 py-2 bg-white text-black text-xs font-bold rounded-full hover:bg-neutral-200 transition-all">SUBSCRIBE</a>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <main id="home">
-    <section class="max-w-6xl mx-auto px-5 py-20 md:py-28">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-sm">ค่ายเพลง • Music Label</div>
-          <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight">เสียงใหม่จากไทยสู่โลก — <span class="block text-neutral-300">Discover fresh artists at TSP</span></h1>
-          <p class="mt-5 text-lg opacity-80">เราสนับสนุนศิลปินหน้าใหม่ สร้างสรรค์เพลงคุณภาพ และแบ่งปันสู่ผู้ฟังทั่วโลก พร้อมเบื้องหลังการทำงานที่คุณจะหลงรัก</p>
-          <div class="mt-6 flex gap-3">
-            <a href="https://www.youtube.com/@tsp_ent" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl ring-1 ring-white/10">▶ Watch on YouTube</a>
-            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-black">✉ Work with us</a>
+    <section class="relative max-w-6xl mx-auto px-5 py-24 md:py-40">
+      <!-- Glow Decor -->
+      <div class="absolute top-0 -left-20 w-80 h-80 bg-purple-600/10 rounded-full blur-[120px] -z-10"></div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-[10px] tracking-[0.2em] uppercase text-purple-400 mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+            </span>
+            Music Label Thailand
+          </div>
+          <h1 class="text-5xl md:text-7xl font-black leading-[1.1] text-gradient">เสียงใหม่จากไทย <br> สู่สายตาโลก</h1>
+          <p class="mt-8 text-lg text-neutral-400 leading-relaxed max-w-md">เราผลักดันศิลปินไทยรุ่นใหม่ สร้างสรรค์ผลงานคุณภาพที่ไร้พรมแดน ค้นพบศิลปินที่ใช่ในสไตล์ที่เป็นคุณ</p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="https://www.youtube.com/@tsp_ent" target="_blank" class="px-8 py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform">Watch Latest MV</a>
+            <a href="#contact" class="px-8 py-4 rounded-full glass card-border font-bold hover:bg-white/5 transition-all">Work with us</a>
           </div>
         </div>
-        <div class="relative">
-          <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden card-border glass">
+        
+        <div class="relative" data-aos="zoom-in" data-aos-delay="200">
+          <div class="w-full aspect-square rounded-3xl overflow-hidden card-border rotate-3 hover:rotate-0 transition-transform duration-700">
             <img src="https://images.unsplash.com/photo-1507209696999-4f4b6d9b7a7b?q=80&w=1600&auto=format&fit=crop" alt="studio" class="w-full h-full object-cover">
           </div>
-          <div class="absolute -bottom-6 left-6 bg-gradient-to-r from-pink-500/30 to-violet-600/30 rounded-3xl px-4 py-2 card-border">Open for demos</div>
+          <div class="absolute -bottom-6 -left-6 bg-purple-600 px-6 py-3 rounded-2xl shadow-xl font-bold italic tracking-wider">OPEN FOR DEMOS</div>
         </div>
       </div>
     </section>
 
     <!-- Artists -->
-    <section id="artists" class="py-12 border-t border-white/6">
+    <section id="artists" class="py-24 border-t border-white/5 bg-neutral-950/50">
       <div class="max-w-6xl mx-auto px-5">
-        <div class="flex items-end justify-between mb-6">
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold">Featured Artists</h2>
-            <p class="text-sm opacity-80 mt-1">พบกับรายชื่อศิลปินจากค่าย TSP Entertainment</p>
-          </div>
+        <div class="mb-12" data-aos="fade-up">
+          <h2 class="text-3xl md:text-5xl font-black mb-4">Featured Artists</h2>
+          <p class="text-neutral-500">ศิลปินในสังกัดที่เราภูมิใจนำเสนอ</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1 -->
-          <article class="rounded-2xl overflow-hidden card-border glass">
-            <img src="521548783_17863265091434202_5689502785759297553_n.jpg" alt="The Spy" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <div class="font-semibold">The Spy </div>
-              <div class="text-sm opacity-70">ThaiRock</div>
-            </div>
-          </article>
         
-
-          <article class="rounded-2xl overflow-hidden card-border glass">
-            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="John Iron" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <div class="font-semibold">John Iron</div>
-              <div class="text-sm opacity-70">Experimental</div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 (Custom Image) -->
+          <article class="group rounded-2xl overflow-hidden card-border glass transition-all duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-64 overflow-hidden">
+              <img src="521548783_17863265091434202_5689502785759297553_n.jpg" alt="The Spy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-xl group-hover:text-purple-400 transition-colors">The Spy</h3>
+              <p class="text-xs tracking-widest text-neutral-500 uppercase mt-1">Thai Rock</p>
             </div>
           </article>
 
-          <article class="rounded-2xl overflow-hidden card-border glass">
-            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="Capibara" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <div class="font-semibold">Capibara</div>
-              <div class="text-sm opacity-70">Hip‑Hop / Rap</div>
+          <!-- Card 2 -->
+          <article class="group rounded-2xl overflow-hidden card-border glass transition-all duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="John Iron" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-xl group-hover:text-purple-400 transition-colors">John Iron</h3>
+              <p class="text-xs tracking-widest text-neutral-500 uppercase mt-1">Experimental</p>
             </div>
           </article>
 
-          <article class="rounded-2xl overflow-hidden card-border glass">
-            <img src="channels4_profile 1.jpg" alt="คณะรถเล็ก" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <div class="font-semibold">คณะรถเล็ก</div>
-              <div class="text-sm opacity-70">Folk / Indie</div>
+          <!-- Card 3 -->
+          <article class="group rounded-2xl overflow-hidden card-border glass transition-all duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
+            <div class="h-64 overflow-hidden">
+              <img src="channels4_profile 1.jpg" alt="คณะรถเล็ก" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-xl group-hover:text-purple-400 transition-colors">คณะรถเล็ก</h3>
+              <p class="text-xs tracking-widest text-neutral-500 uppercase mt-1">Folk / Indie</p>
             </div>
           </article>
 
-          <article class="rounded-2xl overflow-hidden card-border glass">
-            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop" alt="คณะรถใหญ่" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <div class="font-semibold">คณะรถใหญ่</div>
-              <div class="text-sm opacity-70">Rock</div>
+          <!-- Card 4 -->
+          <article class="group rounded-2xl overflow-hidden card-border glass transition-all duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="400">
+            <div class="h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop" alt="คณะรถใหญ่" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-xl group-hover:text-purple-400 transition-colors">คณะรถใหญ่</h3>
+              <p class="text-xs tracking-widest text-neutral-500 uppercase mt-1">Modern Rock</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Videos -->
-    <section id="videos" class="py-12 border-t border-white/6">
+    <!-- Videos Section -->
+    <section id="videos" class="py-24 border-t border-white/5">
       <div class="max-w-6xl mx-auto px-5">
-        <h3 class="text-2xl font-bold mb-4">Latest Videos</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl overflow-hidden card-border glass">
-            <div class="aspect-video">
-              <iframe src="https://www.youtube.com/watch?v=hzezAOSZMjk" class="w-full h-full" title="MV – Debut Single" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <h3 class="text-3xl font-black mb-12 text-center" data-aos="fade-up">Latest Content</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Video 1 (Fixed Link) -->
+          <div class="group rounded-3xl overflow-hidden card-border glass transition-all shadow-2xl shadow-purple-500/5" data-aos="zoom-in">
+            <div class="aspect-video relative">
+              <iframe src="https://www.youtube.com/embed/hzezAOSZMjk" class="w-full h-full" title="MV" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="p-3 text-sm">MV – Debut Single</div>
+            <div class="p-4 text-sm font-semibold text-neutral-300">Debut Single - Official MV</div>
           </div>
 
-          <div class="rounded-2xl overflow-hidden card-border glass">
-            <div class="aspect-video">
-              <iframe src="https://www.youtube.com/embed/5NV6Rdv1a3I" class="w-full h-full" title="Live Session" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          <div class="group rounded-3xl overflow-hidden card-border glass transition-all shadow-2xl shadow-purple-500/5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="aspect-video relative">
+              <iframe src="https://www.youtube.com/embed/5NV6Rdv1a3I" class="w-full h-full" title="Live Session" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="p-3 text-sm">Live Session</div>
+            <div class="p-4 text-sm font-semibold text-neutral-300">Live Studio Session</div>
           </div>
 
-          <div class="rounded-2xl overflow-hidden card-border glass">
-            <div class="aspect-video">
-              <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" class="w-full h-full" title="Behind the Scenes" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          <div class="group rounded-3xl overflow-hidden card-border glass transition-all shadow-2xl shadow-purple-500/5" data-aos="zoom-in" data-aos-delay="200">
+            <div class="aspect-video relative">
+              <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" class="w-full h-full" title="BTS" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="p-3 text-sm">Behind the Scenes</div>
+            <div class="p-4 text-sm font-semibold text-neutral-300">Behind the Scenes</div>
           </div>
-        </div>
-        <div class="text-center mt-8">
-          <a href="https://www.youtube.com/@tsp_ent/videos" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl ring-1 ring-white/10">View all videos</a>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="py-12 border-t border-white/6">
-      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-8 items-start">
-        <div>
-          <h3 class="text-2xl font-bold">About TSP Entertainment</h3>
-          <p class="mt-3 opacity-90">TSP Entertainment คือค่ายเพลงที่ก่อตั้งในปี 2567 พร้อมภารกิจผลักดันเสียงใหม่ ๆ จากประเทศไทยให้ก้องไกลสู่ผู้ฟังทั่วโลก เราทำงานร่วมกับศิลปินอย่างใกล้ชิดตั้งแต่การพัฒนาเพลง การผลิต ไปจนถึงการเผยแพร่และโปรโมต</p>
+    <section id="about" class="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-neutral-950">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <h3 class="text-4xl font-black mb-6">เกี่ยวกับเรา</h3>
+          <p class="text-lg text-neutral-400 leading-relaxed">TSP Entertainment ก่อตั้งในปี 2567 เพื่อสร้างพื้นที่ให้ศิลปินไทยได้เปล่งประกาย เราเชื่อในความคิดสร้างสรรค์ที่ไม่มีขีดจำกัด และพร้อมสนับสนุนศิลปินตั้งแต่วันแรกจนถึงวันที่ประสบความสำเร็จในระดับสากล</p>
         </div>
-        <ul class="space-y-3 text-sm opacity-80">
-          <li>• Artist Development และ A&amp;R</li>
-          <li>• Production / Mixing / Mastering</li>
-          <li>• Distribution &amp; Marketing</li>
-          <li>• Live Sessions &amp; Content Creation</li>
-        </ul>
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+          <div class="p-6 glass card-border rounded-2xl text-center">
+            <div class="text-3xl font-black text-purple-500 mb-2">A&R</div>
+            <p class="text-xs text-neutral-500 uppercase font-bold">Development</p>
+          </div>
+          <div class="p-6 glass card-border rounded-2xl text-center">
+            <div class="text-3xl font-black text-purple-500 mb-2">PROD</div>
+            <p class="text-xs text-neutral-500 uppercase font-bold">Mixing / Mastering</p>
+          </div>
+          <div class="p-6 glass card-border rounded-2xl text-center">
+            <div class="text-3xl font-black text-purple-500 mb-2">DIST</div>
+            <p class="text-xs text-neutral-500 uppercase font-bold">Global Marketing</p>
+          </div>
+          <div class="p-6 glass card-border rounded-2xl text-center">
+            <div class="text-3xl font-black text-purple-500 mb-2">LIVE</div>
+            <p class="text-xs text-neutral-500 uppercase font-bold">Content Creation</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-12 border-t border-white/6">
-      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-5 gap-6">
-        <form class="md:col-span-3 rounded-2xl p-6 card-border glass" onsubmit="event.preventDefault(); alert('ขอบคุณ! ทางเราจะติดต่อกลับเร็ว ๆ นี้');">
-          <div class="grid md:grid-cols-2 gap-4">
+    <section id="contact" class="py-24 border-t border-white/5 relative">
+      <div class="max-w-4xl mx-auto px-5">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h3 class="text-4xl font-black mb-4">ร่วมงานกับเรา</h3>
+          <p class="text-neutral-500">ส่ง Demo หรือติดต่อสอบถามเรื่องงานจ้างศิลปินได้ที่นี่</p>
+        </div>
+        <form class="rounded-3xl p-8 card-border glass relative overflow-hidden" data-aos="flip-left">
+          <div class="grid md:grid-cols-2 gap-6 relative z-10">
             <div>
-              <label class="text-sm opacity-80">ชื่อ (Name)</label>
-              <input required type="text" placeholder="Your name" class="mt-1 w-full rounded-xl bg-neutral-900/60 px-3 py-2 outline-none" />
+              <label class="text-xs font-bold text-neutral-500 uppercase mb-2 block">ชื่อของคุณ</label>
+              <input required type="text" placeholder="Your name" class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-purple-500 transition-colors" />
             </div>
             <div>
-              <label class="text-sm opacity-80">อีเมล (Email)</label>
-              <input required type="email" placeholder="you@example.com" class="mt-1 w-full rounded-xl bg-neutral-900/60 px-3 py-2 outline-none" />
+              <label class="text-xs font-bold text-neutral-500 uppercase mb-2 block">อีเมล</label>
+              <input required type="email" placeholder="you@example.com" class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-purple-500 transition-colors" />
             </div>
           </div>
-          <div class="mt-4">
-            <label class="text-sm opacity-80">ข้อความ (Message)</label>
-            <textarea required placeholder="Tell us about your project or send a demo link…" rows="5" class="mt-1 w-full rounded-xl bg-neutral-900/60 px-3 py-2 outline-none"></textarea>
+          <div class="mt-6 relative z-10">
+            <label class="text-xs font-bold text-neutral-500 uppercase mb-2 block">ข้อความ / ลิงก์ DEMO</label>
+            <textarea required placeholder="Tell us about your project..." rows="5" class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-purple-500 transition-colors"></textarea>
           </div>
-          <button type="submit" class="mt-4 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-black">ส่งข้อความ</button>
+          <button type="submit" class="mt-8 w-full py-4 rounded-xl bg-white text-black font-black hover:bg-purple-500 hover:text-white transition-all transform hover:-translate-y-1 shadow-lg">SEND MESSAGE</button>
         </form>
-
-        <aside class="md:col-span-2 rounded-2xl p-6 card-border glass">
-          <h4 class="font-semibold mb-2">Follow</h4>
-          <div class="space-y-3 text-sm">
-            <a href="https://www.youtube.com/@tsp_ent" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 opacity-90">YouTube: @tsp_ent</a>
-            <div class="opacity-70">Facebook / Instagram / TikTok — coming soon</div>
-          </div>
-        </aside>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/6 mt-12 py-8">
-    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm opacity-80">
-      <div>© <span id="year"></span> TSP Entertainment. All rights reserved.</div>
-      <div class="flex items-center gap-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-sm">Buriram, Thailand</div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass card-border text-sm">Open for demos</div>
+  <footer class="border-t border-white/5 py-12">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="text-center md:text-left">
+        <div class="font-black text-xl mb-2">TSP ENTERTAINMENT</div>
+        <div class="text-sm text-neutral-600 italic">"The Sound of Thailand to the World"</div>
+        <div class="text-xs text-neutral-500 mt-4">© <span id="year"></span> All Rights Reserved.</div>
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-4">
+         <div class="flex gap-4">
+           <a href="https://www.youtube.com/@tsp_ent" class="text-neutral-500 hover:text-white transition-colors">YouTube</a>
+           <span class="text-white/10">|</span>
+           <span class="text-neutral-700">Facebook (Soon)</span>
+         </div>
+         <div class="text-[10px] text-neutral-600 tracking-widest uppercase">Buriram, Thailand</div>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // set year
+    // Initialize Animations
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+    
+    // Set Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
